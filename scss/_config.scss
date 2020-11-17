@@ -1,10 +1,10 @@
 // Primary colors:
 $desaturated-red: hsl(0, 36%, 70%);
-$Soft-red: hsl(0, 93%, 68%);
+$soft-red: hsl(0, 93%, 68%);
 
 // Neutral colors
 
-$Dark-grayish-red: hsl(0, 6%, 24%);
+$dark-grayish-red: hsl(0, 6%, 24%);
 
 // Gradients
 
@@ -18,23 +18,38 @@ $Dark-grayish-red: hsl(0, 6%, 24%);
 }
 
 //Layout:
+* {
+  overflow: hidden;
+}
 html,
 body {
   width: 100vw;
   height: 100vh;
   margin: 0;
 }
-body {
-  display: grid;
-  place-items: center;
-  grid-template-rows: 1fr auto;
-}
 
 //Frontend Mentor Atributtion
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+}
 .attribution {
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+//Media query
+@mixin mobile {
+  @media (max-width: 800px) {
+    @content;
+  }
+}
+* {
+  @include mobile {
+    overflow: visible;
+  }
 }

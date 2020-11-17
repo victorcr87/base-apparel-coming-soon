@@ -1,1 +1,94 @@
 @import "config";
+
+main {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.content {
+  height: 100%;
+  background: top left / cover no-repeat url("../images/bg-pattern-desktop.svg"),
+    linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  margin: 0;
+  font-size: 1rem;
+  padding-left: 15%;
+  padding-bottom: 5%;
+  line-height: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.picture-container {
+  height: 100vh;
+}
+.title {
+  font-size: 4rem;
+  margin-top: 20%;
+  margin-bottom: 1%;
+  color: $dark-grayish-red;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  line-height: 4.5rem;
+  span {
+    font-weight: 300;
+  }
+}
+.greetings {
+  max-width: 32rem;
+  font-size: 1.2rem;
+  line-height: 2em;
+  margin-bottom: 5%;
+}
+.pink-text {
+  color: $desaturated-red;
+}
+.picture {
+  width: 45vw;
+  height: 100vh;
+  object-fit: cover;
+}
+form {
+  width: fit-content;
+  position: relative;
+  overflow: visible;
+}
+input {
+  overflow: auto;
+  color: $desaturated-red;
+  width: 35vw;
+  max-width: 30em;
+  border-radius: 100px;
+  border: 1px solid $desaturated-red;
+  padding: 1.2em 1em 1.2em 2em;
+  outline: transparent;
+  &::placeholder {
+    color: $desaturated-red;
+  }
+}
+.submit-button {
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  border-radius: 50px;
+  border: transparent;
+  box-shadow: 0px 25px 61px -30px #ad0c0c;
+  cursor: pointer;
+  outline: transparent;
+}
+html,
+body,
+main,
+.content,
+.picture-container,
+.picture {
+  @include mobile {
+    height: auto;
+  }
+}
